@@ -34,7 +34,7 @@ namespace Core.Service
 
         public IEnumerable<TransactionModel> GetAll()
         {
-            throw new NotImplementedException();
+            return _DatabaseContext.Transactions.Select(p => (TransactionModel)p).ToList();
         }
 
         public TransactionModel GetById(int? id = 0)

@@ -38,7 +38,7 @@ namespace Core.Service
 
         public IEnumerable<AccountModel> GetAll()
         {
-            throw new NotImplementedException();
+            return _DatabaseContext.Accounts.Select(p => (AccountModel)p).ToList();
         }
 
         public AccountModel GetById(int? id = 0)

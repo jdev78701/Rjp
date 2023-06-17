@@ -9,6 +9,6 @@ namespace Core.Interface
 {
     public interface ICustomerRepository:IBaseRepository<CustomerModel>
     {
-
+        UserAccountModel GetCustomer(int id);
     }
 }

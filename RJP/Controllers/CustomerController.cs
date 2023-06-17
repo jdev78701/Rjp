@@ -21,9 +21,10 @@ namespace RJP.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CustomerModel> Get()
+        public UserAccountModel Get(int id)
         {
-            return _customerRepository.GetAll();
+
+            return _customerRepository.GetCustomer(id);
         }
     }
 }
