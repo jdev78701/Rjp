@@ -21,7 +21,7 @@ namespace RJP.Controllers
         {
             _accountRepository = accountRepository;
             _logger = logger;
-
+        
         }
         [HttpPost]
         public AccountModel Save(AccountModel accountModel)
