@@ -1,6 +1,10 @@
+using Core.Context;
+using Core.Interface;
+using Core.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +29,13 @@ namespace RJP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContextPool<Rjp_DatabaseContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+            services.AddScoped<ITransactionRepository, TransactionService>();
+            services.AddScoped<IAccountRepository, AccountService>();
+            services.AddScoped<ICustomerRepository, CustomerService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

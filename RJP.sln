@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RJP", "RJP\RJP.csproj", "{4949B8A3-4842-45A4-962A-B85C63D455CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RJP", "RJP\RJP.csproj", "{4949B8A3-4842-45A4-962A-B85C63D455CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{DD7BCBB4-2EDB-4E0B-8CB8-9B6DE6F57CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4949B8A3-4842-45A4-962A-B85C63D455CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4949B8A3-4842-45A4-962A-B85C63D455CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4949B8A3-4842-45A4-962A-B85C63D455CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7BCBB4-2EDB-4E0B-8CB8-9B6DE6F57CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7BCBB4-2EDB-4E0B-8CB8-9B6DE6F57CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7BCBB4-2EDB-4E0B-8CB8-9B6DE6F57CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7BCBB4-2EDB-4E0B-8CB8-9B6DE6F57CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
