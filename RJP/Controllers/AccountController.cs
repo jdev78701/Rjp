@@ -26,10 +26,17 @@ namespace RJP.Controllers
         [HttpPost]
         public AccountModel Save(AccountModel accountModel)
         {
-            var accountModelSaved= _accountRepository.Add(accountModel);
-            if (accountModelSaved != null)
-                return accountModelSaved;
-            else return null;
+            if (ModelState.IsValid)
+            {
+                var accountModelSaved = _accountRepository.Add(accountModel);
+                if (accountModelSaved != null)
+                    return accountModelSaved;
+                else return null;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

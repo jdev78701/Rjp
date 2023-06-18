@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace RJP.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CustomerController : ControllerBase
     {
         private ICustomerRepository _customerRepository;
@@ -20,11 +20,17 @@ namespace RJP.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
+
         public UserAccountModel Get(int id)
         {
 
             return _customerRepository.GetCustomer(id);
+        }
+        [HttpGet]
+        public IEnumerable<CustomerModel> All()
+        {
+            return _customerRepository.GetAll();
         }
     }
 }

@@ -1,0 +1,22 @@
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="customer">Customer:</label>
+      <select class="form-control" id="customer" formControlName="CustomerId">
+        <option value="">Select a customer</option>
+        <option *ngFor="let customer of customers" [value]="customer.customerId">{{ customer.firstName }}</option>
+      </select>
+      <div *ngIf="accountForm.controls['CustomerId'].invalid && (accountForm.controls['CustomerId'].dirty || accountForm.controls['CustomerId'].touched)" class="alert alert-danger">Customer ID is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="initialBalance">Initial Balance:</label>
+      <input type="number" class="form-control" id="initialBalance" formControlName="Balance">
+      <div *ngIf="accountForm.controls['Balance'].invalid && (accountForm.controls['Balance'].dirty || accountForm.controls['Balance'].touched)" class="alert alert-danger">Initial balance is required and must be greater than or equal to 0.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div *ngIf="accountCreated" class="alert alert-success my-3" role="alert">
+    Account created successfully!
+  </div>
+  <div *ngIf="accountNotCreated" class="alert alert-danger my-3">
+    Account Not Created succesfully!
+  </div>
