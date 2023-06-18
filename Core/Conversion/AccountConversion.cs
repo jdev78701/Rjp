@@ -6,7 +6,7 @@ namespace Core.Entities
     {
         public static implicit operator AccountModel(Account account)
         {
-
+            if (account == null) return null;
             AccountModel accountDto = new AccountModel();
             accountDto.AccountId = (int)account?.AccountId;
             accountDto.Balance = account?.Balance;
